@@ -1,0 +1,131 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    z-index:10;
+}
+.banner{
+    background-image: url("images/banner-desktop.jpg");
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+h1{
+    margin: 0;
+    padding: 20vh;
+}
+nav{
+    width: 100%;
+    background: #3a3a3a;
+    z-index:10;
+}
+nav ul{
+   list-style-type: none;
+    width: 70%;
+    margin: 0 auto;
+}
+nav ul li{
+    display: inline-block;
+    padding: 20px 50px 20px 0px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+.content{
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 0px;
+}
+p{
+    padding: 10px 10px;
+}
+button{
+    margin-left: 5px;
+}
+.sticky-header {
+    position: fixed;
+    top:0;
+    left:0;
+    overflow-scrolling: auto;
+    width: 100%;
+}
+.mobileNav {
+    display: none;
+}
+.burger-menu{
+    background: url("images/burgerMenu.png") no-repeat center;
+    background-size: cover;
+    padding: 10px;
+    border: none;
+}
+.close-menu{
+    background: url("images/close.gif") no-repeat center;
+    background-size: cover;
+    padding: 10px;
+    border: none;
+}
+.display-none{
+    display: none;
+}
+@media only screen and (max-width: 800px)
+{
+    .banner{
+        background-image: url("images/banner-mobile.jpg");
+    }
+    h1{
+        padding: 10vh;
+    }
+    .mobileNav
+    {
+        display: block;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    .desktopNav
+    {
+        display: none;
+    }
+    nav ul{
+        padding: 0px;
+        width: 100%;
+        display: block;
+    }
+    nav ul li{
+        display: block;
+        padding: 5px 0px 5px 10px;
+    }
+    .content{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+
+    .banner{
+        background-image: url("images/banner-tablet.jpg");
+    }
+
+    h1{
+        padding: 13vh;
+    }
+    nav ul{
+        padding: 0px;
+        width: 100%;
+        display: block;
+    }
+    nav ul li{
+        padding: 20px 50px;
+    }
+    .content{
+        width: 100%;
+    }
+}
