@@ -1,6 +1,7 @@
-var stickyHeader, sticky, scrollCurr=0, scrollPrev=0, scrollDif=0;
+var stickyHeader, sticky, scrollCurr=0, scrollPrev=0, scrollDif=0, body;
 window.onload=function () {
-    alert("7");
+    alert("1");
+    body=document.getElementById("body");
     checkOrientation();
 };
 
@@ -27,17 +28,28 @@ function getOffset(el) {
 window.onresize = function(){
     checkOrientation();
 };
-window.onscroll=function () {
+
+body.addEventListener("scroll", function (e) {
+    if (body.pageYOffset > sticky)
+    {
+        stickyHeader.classList.add("sticky-header");
+    }
+    else if(body.pageYOffset <= sticky)
+    {
+        stickyHeader.classList.remove("sticky-header");
+    }
+}
+/*window.onscroll=function () {
     scrollCurr=window.pageYOffset;
     scrollDif=scrollPrev-scrollCurr;
-    /*if (window.pageYOffset > sticky)
+    if (window.pageYOffset > sticky)
     {
         stickyHeader.classList.add("sticky-header");
     }
     else if(window.pageYOffset <= sticky)
     {
         stickyHeader.classList.remove("sticky-header");
-    }*/
+    }
     if(scrollCurr <= 0)
     {
         stickyHeader.classList.remove("sticky-header");
@@ -51,7 +63,8 @@ window.onscroll=function () {
         stickyHeader.classList.remove("sticky-header");
     }
     scrollPrev=scrollCurr;
-};
+};*/
+
 
 function showHideMenu() {
     var burgerMenu=document.getElementById("burger-menu");
