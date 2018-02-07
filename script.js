@@ -1,6 +1,6 @@
-var stickyHeader, sticky, scrollCurr=0, scrollPrev=0, scrollDif=0, banner;
+var stickyHeader, sticky, banner;
 window.onload=function () {
-    alert("1");
+    alert("2");
     checkOrientation();
 };
 
@@ -16,7 +16,7 @@ function checkOrientation()
     }
     //if()
     //sticky = getOffset(stickyHeader);
-    sticky = stickyHeader.offsetTop;
+    //sticky = stickyHeader.offsetTop;
 };
 
 function getOffset(el) {
@@ -44,19 +44,6 @@ window.onscroll=function () {
     {
         stickyHeader.classList.remove("sticky-header");
     }
-    /*if(scrollCurr <= 0)
-    {
-        stickyHeader.classList.remove("sticky-header");
-    }
-    else if(scrollDif < 0)
-    {
-        stickyHeader.classList.add("sticky-header")
-    }
-    else if(scrollDif > 0)
-    {
-        stickyHeader.classList.remove("sticky-header");
-    }
-    scrollPrev=scrollCurr;*/
 };
 
 function showHideMenu() {
