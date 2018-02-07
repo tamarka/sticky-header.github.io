@@ -1,4 +1,4 @@
-var stickyHeader, sticky, scrollCurr=0, scrollPrev=0, scrollDif=0;
+var stickyHeader, sticky, scrollCurr=0, scrollPrev=0, scrollDif=0, banner;
 window.onload=function () {
     alert("1");
     checkOrientation();
@@ -30,9 +30,15 @@ window.onresize = function(){
 window.onscroll=function () {
     //scrollCurr=window.pageYOffset;
     //scrollDif=scrollPrev-scrollCurr;
+    sticky = stickyHeader.offsetTop;
+    banner=document.getElementById("banner");
     if (window.scrollY > sticky && sticky!=0)
     {
         stickyHeader.classList.add("sticky-header");
+    }
+    else if( banner.scrollHeight > window.scrollY && sticky==0)
+    {
+        stickyHeader.classList.remove("sticky-header");
     }
     else if(window.scrollY <= sticky)
     {
