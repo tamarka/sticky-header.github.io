@@ -1,6 +1,6 @@
 var stickyHeader, sticky;
 window.onload=function () {
-    alert("3");
+    alert("4");
     checkOrientation();
 };
 
@@ -14,8 +14,8 @@ function checkOrientation()
     {
         stickyHeader = document.getElementById("desktopNav");
     }
-    //ticky = getOffset(stickyHeader);
-    sticky = stickyHeader.offsetTop;
+    sticky = getOffset(stickyHeader);
+    //sticky = stickyHeader.offsetTop;
 };
 
 function getOffset(el) {
@@ -31,11 +31,7 @@ window.onscroll=function () {
     {
         stickyHeader.classList.add("sticky-header");
     }
-    else if(window.pageYOffset == sticky)
-    {
-        stickyHeader.classList.remove("sticky-header");
-    }
-    else if(window.pageYOffset < sticky)
+    else if(window.pageYOffset <= sticky)
     {
         stickyHeader.classList.remove("sticky-header");
     }
