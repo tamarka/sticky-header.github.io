@@ -38,7 +38,7 @@ body.addEventListener("scroll", function (e) {
     {
         stickyHeader.classList.remove("sticky-header");
     }
-}
+});
 /*window.onscroll=function () {
     scrollCurr=window.pageYOffset;
     scrollDif=scrollPrev-scrollCurr;
