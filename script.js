@@ -1,6 +1,6 @@
 var stickyHeader, sticky;
 window.onload=function () {
-    alert("4");
+    alert("5");
     checkOrientation();
 };
 
