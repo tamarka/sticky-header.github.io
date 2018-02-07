@@ -1,6 +1,6 @@
-var stickyHeader, sticky;
+var stickyHeader, sticky, scrollCurr=0, scrollPrev=0, scrollDif=0;
 window.onload=function () {
-    alert("5");
+    alert("6");
     checkOrientation();
 };
 
@@ -14,6 +14,7 @@ function checkOrientation()
     {
         stickyHeader = document.getElementById("desktopNav");
     }
+    //if()
     sticky = getOffset(stickyHeader);
     //sticky = stickyHeader.offsetTop;
 };
@@ -27,14 +28,29 @@ window.onresize = function(){
     checkOrientation();
 };
 window.onscroll=function () {
-    if (window.pageYOffset > sticky)
+    scrollCurr=window.pageYOffset;
+    scrollDif=scrollPrev-scrollCurr;
+    /*if (window.pageYOffset > sticky)
     {
         stickyHeader.classList.add("sticky-header");
     }
     else if(window.pageYOffset <= sticky)
     {
         stickyHeader.classList.remove("sticky-header");
+    }*/
+    if(scrollCurr <= 0)
+    {
+        stickyHeader.classList.remove("sticky-header");
     }
+    else if(scrollDif < 0)
+    {
+        stickyHeader.classList.add("sticky-header")
+    }
+    else if(scrollDif > 0)
+    {
+        stickyHeader.classList.remove("sticky-header");
+    }
+    scrollPrev=scrollCurr;
 };
 
 function showHideMenu() {
