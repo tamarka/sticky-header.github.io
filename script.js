@@ -1,6 +1,6 @@
 var stickyHeader, sticky;
 window.onload=function () {
-    alert("2");
+    alert("3");
     checkOrientation();
 };
 
@@ -27,7 +27,7 @@ window.onresize = function(){
     checkOrientation();
 };
 window.onscroll=function () {
-    if (window.pageYOffset > sticky)
+    if (window.pageYOffset >= sticky)
     {
         stickyHeader.classList.add("sticky-header");
     }
