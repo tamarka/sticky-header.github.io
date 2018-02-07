@@ -1,5 +1,6 @@
 var stickyHeader, sticky;
 window.onload=function () {
+    alert("1");
     checkOrientation();
 };
 
@@ -13,7 +14,12 @@ function checkOrientation()
     {
         stickyHeader = document.getElementById("desktopNav");
     }
-    sticky = stickyHeader.offsetTop;
+    sticky = getOffset(stickyHeader);
+};
+
+function getOffset(el) {
+    el = el.getBoundingClientRect();
+    return  el.top + window.scrollY;
 };
 
 window.onresize = function(){
