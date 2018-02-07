@@ -1,6 +1,6 @@
 var stickyHeader, sticky, scrollCurr=0, scrollPrev=0, scrollDif=0, body;
 window.onload=function () {
-    alert("1");
+    alert("2");
     body=document.getElementById("body");
     checkOrientation();
 };
@@ -30,11 +30,11 @@ window.onresize = function(){
 };
 
 body.addEventListener("scroll", function (e) {
-    if (body.pageYOffset > sticky)
+    if (getOffset(body) > sticky)
     {
         stickyHeader.classList.add("sticky-header");
     }
-    else if(body.pageYOffset <= sticky)
+    else
     {
         stickyHeader.classList.remove("sticky-header");
     }
