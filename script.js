@@ -1,7 +1,9 @@
-var stickyHeader, sticky, banner;
+var stickyHeader, sticky, banner, content, contentStyle;
 window.onload=function () {
     alert("2");
+    content=document.getElementById("content");
     checkOrientation();
+    addStyleContent();
 };
 
 function checkOrientation()
@@ -14,35 +16,38 @@ function checkOrientation()
     {
         stickyHeader = document.getElementById("desktopNav");
     }
-    //if()
-    //sticky = getOffset(stickyHeader);
-    //sticky = stickyHeader.offsetTop;
+    sticky = stickyHeader.offsetTop;
 };
 
-function getOffset(el) {
-    el = el.getBoundingClientRect();
-    return  el.top + window.scrollY;
+function addStyleContent() {
+    contentStyle=content.style;
+    var marginTop=-stickyHeader.scrollHeight;
+    var paddinTop=stickyHeader.scrollHeight + 20;
+    contentStyle.marginTop= ''+ marginTop +'px';
+    contentStyle.paddingTop=''+ paddinTop +'px';
 };
 
 window.onresize = function(){
     checkOrientation();
+    addStyleContent();
 };
 window.onscroll=function () {
-    //scrollCurr=window.pageYOffset;
-    //scrollDif=scrollPrev-scrollCurr;
     sticky = stickyHeader.offsetTop;
     banner=document.getElementById("banner");
     if (window.scrollY > sticky && sticky!=0)
     {
         stickyHeader.classList.add("sticky-header");
+        content.classList.add("content-with-sticky");
     }
     else if( banner.scrollHeight > window.scrollY && sticky==0)
     {
         stickyHeader.classList.remove("sticky-header");
+        content.classList.remove("content-with-sticky");
     }
     else if(window.scrollY <= sticky)
     {
         stickyHeader.classList.remove("sticky-header");
+        //content.classList.remove("content-with-sticky");
     }
 };
 

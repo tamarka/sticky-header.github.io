@@ -31,10 +31,11 @@ nav ul{
    list-style-type: none;
     width: 70%;
     margin: 0 auto;
+    padding: 0;
 }
 nav ul li{
     display: inline-block;
-    padding: 20px 50px 20px 0px;
+    padding: 20px 80px 20px 10px;
 }
 nav ul li a{
     text-decoration: none;
@@ -42,8 +43,11 @@ nav ul li a{
 }
 .content{
     width: 70%;
-    margin: 0 auto;
-    padding: 20px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content-with-sticky{
+    margin-top: 0px !important;
 }
 p{
     padding: 10px 10px;
@@ -57,8 +61,6 @@ button{
     left:0;
     overflow-scrolling: auto;
     width: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform : translate3d(0, 0, 0);
 }
 .mobileNav {
     display: none;
@@ -80,6 +82,9 @@ button{
 }
 @media only screen and (max-width: 800px)
 {
+    html {
+        scroll-behavior: smooth;
+    }
     .banner{
         background-image: url("images/banner-mobile.jpg");
     }
@@ -111,6 +116,10 @@ button{
     }
 }
 @media only screen and (max-width: 1200px) {
+
+    html {
+        scroll-behavior: smooth;
+    }
 
     .banner{
         background-image: url("images/banner-tablet.jpg");
