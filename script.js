@@ -1,6 +1,5 @@
 var stickyHeader, sticky, banner, content, contentStyle;
 window.onload=function () {
-    alert("2");
     content=document.getElementById("content");
     checkOrientation();
     addStyleContent();
